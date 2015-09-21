@@ -1,3 +1,5 @@
+package co.com.uniminuto;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -28,7 +30,7 @@ public class MiConexion implements Serializable {
 
     private PropertyChangeSupport propertySupport;
     //variable que habre la conexion
-    java.sql.Statement st;
+    static java.sql.Statement st;
     
     public MiConexion() {
         propertySupport = new PropertyChangeSupport(this);
@@ -51,16 +53,12 @@ public class MiConexion implements Serializable {
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertySupport.removePropertyChangeListener(listener);
     }
-
-//    public static void main(String []args){
-//        consultarDatos();
-//    }
     
     public MiCatalogo consultarDatos() {
          MiCatalogo micatalogo = new MiCatalogo();
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-            Connection conexion = (Connection) DriverManager.getConnection("jdbc:derby://localhost:1527/SitioPlusBD", "uniminuto", "123456");
+            Connection conexion = (Connection) DriverManager.getConnection("jdbc:derby://localhost:1527/MisitioPlusDB", "root", "123456");
             st = conexion.createStatement();
             ResultSet result = st.executeQuery("select * from ROOT.CATALOGO ");
             
@@ -68,11 +66,14 @@ public class MiConexion implements Serializable {
                 Catalogo catalogo = new Catalogo();
                 catalogo.setId(result.getInt(1));
                 catalogo.setNombre(result.getString(2));
-                catalogo.setImagen(result.getString(3));
-                catalogo.setPrecio(result.getDouble(4));
+                catalogo.setPrecio(result.getDouble(3));
+                catalogo.setImagen(result.getString(4));
                 micatalogo.agregarProducto(catalogo);
             }
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException ex){
+              Logger.getLogger(MiConexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          catch( SQLException ex) {
             Logger.getLogger(MiConexion.class.getName()).log(Level.SEVERE, null, ex);
         }
         return micatalogo;

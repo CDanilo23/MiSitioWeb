@@ -4,6 +4,7 @@
     Author     : Administrador
 --%>
 
+<%@page import="co.com.uniminuto.MiConexion"%>
 <%@page import="co.com.uniminuto.Catalogo"%>
 <%@page import="co.com.uniminuto.MiCatalogo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -91,7 +92,7 @@
                             <td>Mayor de Edad, residente en la ciudad</td> 
                             <td><a href="datos.jsp?id=3"><button class="btnAlquilar">Alquilar</button></a></td>
                         </tr>
-                        %>
+                        
                     </table>
                 </article>
             </section>
