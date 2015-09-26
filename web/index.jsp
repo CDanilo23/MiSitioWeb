@@ -64,7 +64,8 @@
                                out.println("<td>"+catalogo.getId()+"</td>");
                                out.println("<td>"+catalogo.getNombre()+"</td>");
                                out.println("<td>"+catalogo.getPrecio()+"</td>");
-                               out.println("<td>"+catalogo.getImagen()+"</td>");
+                               out.println("<td><img src='img/"+catalogo.getImagen()+"'><img></td>");
+                               out.println("<td><a href ='datos.jsp?id="+catalogo.getId()+"' class = 'btnAlquilar'>Alquiler</a></td>");
                                out.println("</tr>");
                            }
                         %>
