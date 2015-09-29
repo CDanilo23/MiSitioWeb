@@ -28,7 +28,7 @@
                 <nav class="menu"><!--Menu-->
                     <ul class="menu-nav">
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="#">Alquiler</a></li>
+                        <li><a href="mostrar.jsp">Alquiler</a></li>
                         <li><a href="#">Reportes</a></li>
                         <li><a href="#">Mis Servicios</a></li>
                         <li><a href="#">Contactenos</a></li>
@@ -48,11 +48,11 @@
                     <table >
                         <caption>Catálogo de bicicletas para Alquiler.</caption>
                         <tr>
-                            <th>Id</th>  
-                            <th>Imágen</th> 
+                             <th>Id</th>  
+                             <th>Imágen</th> 
                              <th>Descripción</th> 
                              <th>Precio</th>
-                            <th>requisitos</th>
+                            <!--<th>requisitos</th>-->
                             <th>Alquilar</th>
                         </tr>
                         <%
@@ -62,38 +62,15 @@
                            for(Catalogo catalogo : miCatalogo.getMisProductos()){
                                out.println("<tr>");
                                out.println("<td>"+catalogo.getId()+"</td>");
+                               out.println("<td><img src='img/"+catalogo.getImagen()+"'><img></td>");
                                out.println("<td>"+catalogo.getNombre()+"</td>");
                                out.println("<td>"+catalogo.getPrecio()+"</td>");
-                               out.println("<td><img src='img/"+catalogo.getImagen()+"'><img></td>");
-                               out.println("<td><a href ='datos.jsp?id="+catalogo.getId()+"' class = 'btnAlquilar'>Alquiler</a></td>");
+                               
+                               out.println("<td><a href ='datos.jsp?id="+catalogo.getId()+"&nombre="+catalogo.getNombre()+"&precio="+catalogo.getPrecio()+"&imagen="+catalogo.getImagen()+"' class = 'btnAlquilar'>Alquiler</a></td>");
                                out.println("</tr>");
                            }
                         %>
-                        <tr> 
-                            <td>1</td> 
-                            <td><img src="img/bici1.png"/></td> 
-                            <td>bicicletas marlin 5</td> 
-                            <td>25.000</td>
-                            <td>Mayor de Edad, residente en la ciudad</td> 
-                            <td><a href="datos.jsp?id=1"><button class="btnAlquilar">Alquilar</button></a></td>
-                        </tr>
-                        <tr> 
-                            <td>2</td> 
-                            <td><img src="img/bici2.png"/></td> 
-                            <td>bicicletas marlin 5</td> 
-                            <td>25.000</td>
-                            <td>Mayor de Edad, residente en la ciudad</td> 
-                            <td><a href="datos.jsp?id=2"><button class="btnAlquilar">Alquilar</button></a></td>
-                        </tr>
-                        <tr> 
-                            <td>3</td> 
-                            <td><img src="img/bici3.png"/></td> 
-                            <td>bicicletas marlin 5</td> 
-                            <td>25.000</td>
-                            <td>Mayor de Edad, residente en la ciudad</td> 
-                            <td><a href="datos.jsp?id=3"><button class="btnAlquilar">Alquilar</button></a></td>
-                        </tr>
-                        
+                       
                     </table>
                 </article>
             </section>
