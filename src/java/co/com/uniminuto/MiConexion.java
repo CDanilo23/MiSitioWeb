@@ -58,7 +58,7 @@ public class MiConexion implements Serializable {
          MiCatalogo micatalogo = new MiCatalogo();
         try {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-            Connection conexion = (Connection) DriverManager.getConnection("jdbc:derby://localhost:1527/MisitioPlusDB", "root", "123456");
+            Connection conexion = (Connection) DriverManager.getConnection("jdbc:derby://localhost:1527/MiSitioPlusDB", "root", "123456");
             st = conexion.createStatement();
             ResultSet result = st.executeQuery("select * from ROOT.CATALOGO ");
             
