@@ -1,6 +1,6 @@
 <%-- 
-    Document   : prueba_branch
-    Created on : 9/10/2015, 10:36:55 PM
+    Document   : prueba_merge
+    Created on : 9/10/2015, 10:49:39 PM
     Author     : YHOAN CUCAITA
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello idiots!</h1>
+        <h1>Hello World!</h1>
     </body>
 </html>
