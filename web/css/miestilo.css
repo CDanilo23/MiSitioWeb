@@ -174,7 +174,7 @@ tr:hover td {
         text-decoration: none;
     
 }
-
+/*******************BOTON ALQUILER********************/
 .btnAlquilar:hover {
     background: #3cfc7f;
     background-image: -webkit-linear-gradient(top, #3cfc7f, #3498db);
@@ -240,3 +240,7 @@ header{
     -moz-box-shadow: 0px 0px 10px 10px rgba(149, 13, 61, 0.75);
     -webkit-box-shadow: 0px 0px 10px 10px rgba(149, 13, 61, 0.75);
 }
+
+/* ---------------------- Blueslate nav ---------------------- */
+#tabs25{position:relative;display:block;height:42px;font-size:11px;font-weight:bold;background:transparent url(images/blueslate_background.gif) repeat-x top left;font-family:Arial,Verdana,Helvitica,sans-serif;text-transform:uppercase;}
+/* ---------------------- END Blueslate nav ---------------------- */

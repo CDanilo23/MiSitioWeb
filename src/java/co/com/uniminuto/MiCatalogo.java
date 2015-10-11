@@ -30,4 +30,8 @@ public class MiCatalogo implements Serializable{
     public void agregarProducto(Catalogo catalogo){
         misProductos.add(catalogo);
     }
+    
+    public void removerProducto(Catalogo catalogo){
+        misProductos.remove(catalogo);
+    }
 }

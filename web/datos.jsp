@@ -16,7 +16,6 @@
 
     <body>
         <%
-
             String id = (String) request.getParameter("id");
             String nombre = (String) request.getParameter("nombre");
             double precio = Double.valueOf(request.getParameter("precio"));
